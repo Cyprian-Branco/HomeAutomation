@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "531816854051",
+    "firebase_url": "https://homeautomation-93e34.firebaseio.com",
+    "project_id": "homeautomation-93e34",
+    "storage_bucket": "homeautomation-93e34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531816854051:android:fe3d8ca11fc75162cc7796",
+        "android_client_info": {
+          "package_name": "com.moringaschool.homeautomation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531816854051-qcqq2615shpr8s926s46vilro14b2rok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhHhCiLhAU2vH16de1DijNrr9sfTqTeLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "531816854051-qcqq2615shpr8s926s46vilro14b2rok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
