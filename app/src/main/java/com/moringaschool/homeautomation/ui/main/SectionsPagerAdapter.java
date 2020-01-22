@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.moringaschool.homeautomation.R;
+import com.moringaschool.homeautomation.UserInterface.FragmentHomeActivity;
+import com.moringaschool.homeautomation.UserInterface.FrgmentSavedDataActivity;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -27,9 +29,15 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        Fragment fragment = null;
+        switch (position){
+            case 0:
+                fragment = new FragmentHomeActivity();
+                break;
+            case 1:
+                fragment = new FrgmentSavedDataActivity();
+        }
+        return fragment;
     }
 
     @Nullable
