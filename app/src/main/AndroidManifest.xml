@@ -15,13 +15,15 @@
         <activity android:name=".UserInterface.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".UserInterface.CreateAccountActivity" />
         <activity
-            android:name=".UserInterface.MainActivity">
+            android:name=".ui.main.MainActivity">
+        </activity>
+        <activity
+            android:name=".UserInterface.FragmentHomeActivity">
         </activity>
     </application>
 
