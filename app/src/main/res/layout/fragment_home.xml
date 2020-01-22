@@ -5,10 +5,28 @@
     android:layout_height="match_parent"
     tools:context=".UserInterface.FragmentHomeActivity">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/room1Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:text="Room 1"
+        android:layout_marginLeft="10dp"
+        android:background="@color/colorPrimaryLight"
+        android:layout_marginTop="15dp"/>
+    <Button
+        android:id="@+id/room2Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:text="Room 2"
+        android:background="@color/colorPrimaryLight"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"/>
+    </RelativeLayout>
 
 </FrameLayout>
