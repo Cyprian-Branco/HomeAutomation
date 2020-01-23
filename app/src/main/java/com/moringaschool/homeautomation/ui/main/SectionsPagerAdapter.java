@@ -9,8 +9,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.moringaschool.homeautomation.R;
-import com.moringaschool.homeautomation.UserInterface.FragmentHomeActivity;
-import com.moringaschool.homeautomation.UserInterface.FrgmentSavedDataActivity;
+import com.moringaschool.homeautomation.UserInterface.DevicesActivity;
+import com.moringaschool.homeautomation.UserInterface.ControlRoomActivity;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -32,10 +32,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position){
             case 0:
-                fragment = new FragmentHomeActivity();
+                fragment = new DevicesActivity();
                 break;
             case 1:
-                fragment = new FrgmentSavedDataActivity();
+                fragment = new ControlRoomActivity();
         }
         return fragment;
     }
