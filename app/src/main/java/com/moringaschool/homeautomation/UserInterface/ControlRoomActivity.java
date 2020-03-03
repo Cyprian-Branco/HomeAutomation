@@ -8,16 +8,13 @@ import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.moringaschool.homeautomation.R;
 
@@ -111,9 +108,14 @@ public class ControlRoomActivity extends Fragment {
                 msg("Error");
             }
         }
+        getActivity().finish();
     }
     private void msg (String s){
         Toast.makeText(getContext().getApplicationContext(), s, Toast.LENGTH_LONG).show();
+    }
+    private BluetoothSocket createBluetoothSocket(BluetoothDevice device) throws IOException {
+
+        return device.createRfcommSocketToServiceRecord(mUUID);
     }
     private class ConnectBlueTooth extends AsyncTask<Void, Void, Void >{
         private boolean ConnectSuccess = true;
@@ -128,6 +130,18 @@ public class ControlRoomActivity extends Fragment {
                 if(bluetoothSocket==null || !isConnected){
                     mBluetooth = BluetoothAdapter.getDefaultAdapter();
                     BluetoothDevice bluetoothDevice = mBluetooth.getRemoteDevice(address);
+                    try {
+                        if (BluetoothAdapter.checkBluetoothAddress(address)) {
+                            //It is a valid MAC address.
+                            BluetoothDevice device = mBluetooth.getRemoteDevice(address);
+                            bluetoothSocket = createBluetoothSocket(device);
+                        } else {
+
+                            Toast.makeText(getActivity().getApplicationContext(), "Invalid MAC: Address", Toast.LENGTH_LONG).show();
+                        }
+                    } catch (IllegalArgumentException | IllegalStateException e) {
+                        e.printStackTrace();
+                    }
                     bluetoothSocket = bluetoothDevice.createRfcommSocketToServiceRecord(mUUID);
                     BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
                     bluetoothSocket.connect();
@@ -142,6 +156,7 @@ public class ControlRoomActivity extends Fragment {
             super.onPostExecute(results);
             if(!ConnectSuccess){
                 msg("Connection failed. Try again.");
+                getActivity().finish();
             }else{
                 msg("Connected");
                 isConnected = true;
@@ -149,4 +164,5 @@ public class ControlRoomActivity extends Fragment {
             progressDialog.dismiss();
         }
     }
+
 }

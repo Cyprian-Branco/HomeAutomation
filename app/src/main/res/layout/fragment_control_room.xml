@@ -7,7 +7,16 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:background="@color/colorSecondaryText">
 
         <TextView
             android:layout_width="wrap_content"
@@ -19,29 +28,37 @@
 
     <Button
         android:id="@+id/room1Button"
-        android:text="On#Room 1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="50dp" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="69dp"
+        android:layout_marginLeft="69dp"
+        android:layout_marginTop="82dp"
+        android:text="On#Room 1" />
 
     <Button
         android:id="@+id/room1OffButton"
-        android:text="Off#Room 1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="70dp" />
+        android:layout_marginTop="82dp"
+        android:layout_marginRight="69dp"
+        android:text="Off#Room 1" />
 
     <Button
         android:id="@+id/room2Button"
-        android:text="On#Room 2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/room1Button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="50dp"
+        android:text="On#Room 2" />
 
     <Button
         android:id="@+id/room2OffButton"
@@ -53,13 +70,14 @@
         android:layout_marginTop="50dp"
 
         android:layout_marginRight="70dp" />
+
     <Button
         android:id="@+id/unPairButton"
-        android:text="UnPair"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/room2Button"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="70dp" />
+        android:layout_marginTop="48dp"
+        android:layout_marginRight="153dp"
+        android:text="UnPair" />
 </RelativeLayout>
